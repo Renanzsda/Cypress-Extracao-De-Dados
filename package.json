@@ -1,0 +1,24 @@
+{
+  "name": "cypress-extracao-de-dados",
+  "version": "1.0.0",
+  "description": "Extração de dados de uma página para .CSV em cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renanzsda/Cypress-Extracao-De-Dados.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Renanzsda/Cypress-Extracao-De-Dados/issues"
+  },
+  "homepage": "https://github.com/Renanzsda/Cypress-Extracao-De-Dados#readme",
+  "dependencies": {
+    "cypress": "^13.8.0"
+  }
+}
