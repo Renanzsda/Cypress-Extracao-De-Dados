@@ -1,5 +1,6 @@
 // Função para converter os dados em CSV
 /// <reference types="cypress" />
+import Login from "../PageObjects/LoginPage";
 
 //Função para pegar os valores com cabeçalho
 function convertToCSV(data) {
@@ -27,10 +28,13 @@ Cypress.Commands.add('logar', () => {
   cy.get('[data-test="username"]').should("be.visible").type(dado.username);
   cy.get('[data-test="password"]').should("be.visible").type(dado.senha);
   cy.get('[data-test="login-button"]').click()
+  cy.get('.app_logo').should("have.text",'Swag Labs')
   })
 })
 
+
   describe("Extrair todos os dados em um arquivo CSV", () => {
+    /*
     it("Extrair primeiro Produto", () => {
     cy.visit("https://www.saucedemo.com/")
     cy.logar()
@@ -209,3 +213,16 @@ it("Sexto Produto", () => {
 
 
 });
+*/
+it("Login com Pom", () => {
+  cy.visit("https://www.saucedemo.com/")
+  cy.fixture("dados.json").then((dado) => {
+  const ln = new Login();
+  ln.setUserName(dado.username)
+  ln.setPassword(dado.password)
+  ln.clickSubmit()
+  ln.verifyLogin()
+  })
+
+})
+  })
